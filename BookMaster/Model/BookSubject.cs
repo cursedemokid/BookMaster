@@ -12,13 +12,13 @@ namespace BookMaster.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class BookAuthor
+    public partial class BookSubject
     {
-        public int id { get; set; }
+        public int IdSubject { get; set; }
         public string IdBook { get; set; }
-        public string IdAuthor { get; set; }
     
-        public virtual Author Author { get; set; }
         public virtual Book Book { get; set; }
+        public virtual Book Book1 { get; set; }
+        public virtual Subject Subject { get; set; }
     }
 }

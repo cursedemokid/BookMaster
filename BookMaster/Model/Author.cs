@@ -19,7 +19,14 @@ namespace BookMaster.Model
             this.BookAuthor = new HashSet<BookAuthor>();
         }
     
-        public int Id { get; set; }
+        public string Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string MiddleName { get; set; }
+        public string BIO { get; set; }
+        public System.DateTime BirthDate { get; set; }
+        public Nullable<System.DateTime> DeathDate { get; set; }
+        public string Wikipedia { get; set; }
     
         public virtual ICollection<BookAuthor> BookAuthor { get; set; }
     }

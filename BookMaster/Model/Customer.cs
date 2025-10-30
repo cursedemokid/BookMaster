@@ -12,13 +12,24 @@ namespace BookMaster.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class BookAuthor
+    public partial class Customer
     {
-        public int id { get; set; }
-        public string IdBook { get; set; }
-        public string IdAuthor { get; set; }
+        public Customer()
+        {
+            this.Circulation = new HashSet<Circulation>();
+        }
     
-        public virtual Author Author { get; set; }
-        public virtual Book Book { get; set; }
+        public string Id { get; set; }
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string Adress { get; set; }
+        public int IdCity { get; set; }
+        public string NumberPhone { get; set; }
+        public string Email { get; set; }
+        public string Zip { get; set; }
+    
+        public virtual ICollection<Circulation> Circulation { get; set; }
+        public virtual City City { get; set; }
     }
 }

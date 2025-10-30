@@ -4,12 +4,27 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4bcf096d7979480eaa6b4af140cc9b43" Name="Diagram1">
-        <EntityTypeShape EntityType="BookMasterModel.Author" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookMasterModel.Book" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookMasterModel.BookAuthor" Width="1.5" PointX="5" PointY="0.75" />
-        <AssociationConnector Association="BookMasterModel.FK_BookAuthor_Author" />
-        <AssociationConnector Association="BookMasterModel.FK_BookAuthor_Book" />
+      <Diagram DiagramId="b9ff2432542746c688cf549e41418778" Name="Diagram1">
+        <EntityTypeShape EntityType="BookMasterModel.Author" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookMasterModel.Book" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookMasterModel.BookAuthor" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookMasterModel.BookSubject" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookMasterModel.Circulation" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookMasterModel.City" Width="1.5" PointX="1.5" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookMasterModel.Cover" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookMasterModel.Customer" Width="1.5" PointX="3.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookMasterModel.Employee" Width="1.5" PointX="3.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookMasterModel.Subject" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="BookMasterModel.FK_BookAuthor_Author" ManuallyRouted="false" />
+        <AssociationConnector Association="BookMasterModel.FK_BookAuthor_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="BookMasterModel.FK_BookSubject_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="BookMasterModel.FK_BookSubject_Book1" ManuallyRouted="false" />
+        <AssociationConnector Association="BookMasterModel.FK_Circulation_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="BookMasterModel.FK_Cover_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="BookMasterModel.FK_BookSubject_Subject" ManuallyRouted="false" />
+        <AssociationConnector Association="BookMasterModel.FK_Circulation_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="BookMasterModel.FK_Circulation_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="BookMasterModel.FK_Customer_City" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

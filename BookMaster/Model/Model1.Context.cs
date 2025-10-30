@@ -13,10 +13,10 @@ namespace BookMaster.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BookMasterEntities1 : DbContext
+    public partial class BookMasterEntities3 : DbContext
     {
-        public BookMasterEntities1()
-            : base("name=BookMasterEntities1")
+        public BookMasterEntities3()
+            : base("name=BookMasterEntities3")
         {
         }
     
@@ -28,5 +28,12 @@ namespace BookMaster.Model
         public DbSet<Author> Author { get; set; }
         public DbSet<Book> Book { get; set; }
         public DbSet<BookAuthor> BookAuthor { get; set; }
+        public DbSet<BookSubject> BookSubject { get; set; }
+        public DbSet<Circulation> Circulation { get; set; }
+        public DbSet<City> City { get; set; }
+        public DbSet<Cover> Cover { get; set; }
+        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Employee> Employee { get; set; }
+        public DbSet<Subject> Subject { get; set; }
     }
 }

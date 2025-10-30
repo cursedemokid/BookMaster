@@ -12,13 +12,18 @@ namespace BookMaster.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class BookAuthor
+    public partial class Circulation
     {
-        public int id { get; set; }
+        public int Id { get; set; }
+        public string IdCustomer { get; set; }
         public string IdBook { get; set; }
-        public string IdAuthor { get; set; }
+        public System.DateTime DateOfIssue { get; set; }
+        public System.DateTime DateOfReturn { get; set; }
+        public System.DateTime ReturnUntil { get; set; }
+        public Nullable<int> IdEmployee { get; set; }
     
-        public virtual Author Author { get; set; }
         public virtual Book Book { get; set; }
+        public virtual Customer Customer { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }

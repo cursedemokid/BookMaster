@@ -17,10 +17,23 @@ namespace BookMaster.Model
         public Book()
         {
             this.BookAuthor = new HashSet<BookAuthor>();
+            this.BookSubject = new HashSet<BookSubject>();
+            this.BookSubject1 = new HashSet<BookSubject>();
+            this.Circulation = new HashSet<Circulation>();
+            this.Cover1 = new HashSet<Cover>();
         }
     
-        public int Id { get; set; }
+        public string Id { get; set; }
+        public string Title { get; set; }
+        public string SubTitle { get; set; }
+        public System.DateTime FirstPublishDate { get; set; }
+        public string Description { get; set; }
+        public string Cover { get; set; }
     
         public virtual ICollection<BookAuthor> BookAuthor { get; set; }
+        public virtual ICollection<BookSubject> BookSubject { get; set; }
+        public virtual ICollection<BookSubject> BookSubject1 { get; set; }
+        public virtual ICollection<Circulation> Circulation { get; set; }
+        public virtual ICollection<Cover> Cover1 { get; set; }
     }
 }
