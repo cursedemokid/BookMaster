@@ -20,7 +20,7 @@ namespace BookMaster.View.Windows
     /// </summary>
     public partial class AuthorizationWindow : Window
     {
-        List<Employee> employees = new List<Employee>();
+        List<Employee> employees = App.context.Employee.ToList();
         public AuthorizationWindow()
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace BookMaster.View.Windows
             if (employees.FirstOrDefault(em => em.Login == LoginTb.Text && em.Password == PasswordPb.Password) != null)
             {
                 App.currentEmployee = employees.FirstOrDefault(em => em.Login == LoginTb.Text && em.Password == PasswordPb.Password);
-                MessageBox.Show($"Добро пожаловать, {App.currentEmployee}!");
+                MessageBox.Show($"Добро пожаловать, {App.currentEmployee.Login}!");
                 DialogResult = true;
                 Close();
             }

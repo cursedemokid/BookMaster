@@ -173,8 +173,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppData\" />
-    <Folder Include="Resources\Icons\" />
-    <Folder Include="Resources\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model\Model1.Context.tt">
@@ -187,6 +185,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\Images\logo.png" />
+    <Resource Include="Resources\Icons\booklogo.jpg" />
+    <Resource Include="Resources\Icons\search.png" />
+    <Resource Include="Resources\Icons\warning.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

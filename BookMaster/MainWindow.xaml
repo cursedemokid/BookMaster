@@ -32,6 +32,6 @@
                 </MenuItem>
             </Menu>
         </Grid>
-        <Frame Name="MainFrame" Grid.Row="1"/>
+        <Frame Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

@@ -55,6 +55,7 @@ namespace BookMaster
             App.currentEmployee = null;
             LogoutMI.Visibility = Visibility.Collapsed;
             LibraryMenu.Visibility = Visibility.Collapsed;
+            LoginMI.Visibility = Visibility.Visible;
             MainFrame.Navigate(null);
         }
 
