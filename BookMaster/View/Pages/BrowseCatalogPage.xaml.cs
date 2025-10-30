@@ -22,6 +22,8 @@ namespace BookMaster.View.Pages
     public partial class BrowseCatalogPage : Page
     {
         List<BookAuthor> bookAuthors = App.context.BookAuthor.ToList();
+        List<Subject> subjects = App.context.Subject.ToList();
+        List<BookSubject> bookSubjects = App.context.BookSubject.ToList();
         public BrowseCatalogPage()
         {
             InitializeComponent();
@@ -57,6 +59,14 @@ namespace BookMaster.View.Pages
         private void NextCoverBtn_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void BookAuthorLv_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            BookAuthor selectedBookAuthor = BookAuthorLv.SelectedItem as BookAuthor;
+            Book book = selectedBookAuthor.Book;
+
+            BookDetailsGrid.DataContext = book;
         }
     }
 }

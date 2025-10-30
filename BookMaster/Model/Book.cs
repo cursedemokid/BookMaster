@@ -11,7 +11,8 @@ namespace BookMaster.Model
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Book
     {
         public Book()
@@ -29,6 +30,21 @@ namespace BookMaster.Model
         public System.DateTime FirstPublishDate { get; set; }
         public string Description { get; set; }
         public string Cover { get; set; }
+        public string Authors
+        {
+            get
+            {
+                return "by " + string.Join(", ", BookAuthor.Select(bookAuthor => bookAuthor.Author.Fullname));
+            }
+        }
+
+        public string Subjects
+        {
+            get
+            {
+                return string.Join(", ", BookSubject.Select(bookSubject => bookSubject.Subject.SubjectName));
+            }
+        }
     
         public virtual ICollection<BookAuthor> BookAuthor { get; set; }
         public virtual ICollection<BookSubject> BookSubject { get; set; }

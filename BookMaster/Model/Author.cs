@@ -23,6 +23,13 @@ namespace BookMaster.Model
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MiddleName { get; set; }
+        public string Fullname
+        {
+            get
+            {
+                return $"{LastName} {FirstName} {MiddleName}";
+            }
+        }
         public string BIO { get; set; }
         public System.DateTime BirthDate { get; set; }
         public Nullable<System.DateTime> DeathDate { get; set; }

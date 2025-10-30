@@ -69,7 +69,7 @@
                     <RowDefinition Height="50" />
                     <RowDefinition Height="5" />
                 </Grid.RowDefinitions>
-                <ListView Name="BookAuthorLv">
+                <ListView Name="BookAuthorLv" SelectionChanged="BookAuthorLv_SelectionChanged">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Book.Title}" Width="420"/>
@@ -136,7 +136,7 @@
                     <ColumnDefinition Width="30" />
                     <ColumnDefinition Width="250" />
                 </Grid.ColumnDefinitions>
-                <Grid>
+                <Grid Name="BookDetailsGrid">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50" />
                         <RowDefinition Height="20" />
@@ -152,13 +152,13 @@
                         <RowDefinition Height="5" />
                         <RowDefinition Height="70" />
                     </Grid.RowDefinitions>
-                    <TextBlock Name="TitleTbl" Grid.Row="0" Text="Boaty McBoatface" FontWeight="Bold"/>
-                    <TextBlock Name="AuthorsTbl" Grid.Row="2" Text="by Byron Barton" FontSize="15"/>
-                    <TextBlock Name="PublishedDateTbl" Grid.Row="4" Text="first published: 2016" FontSize="15"/>
+                    <TextBlock Name="TitleTbl" Grid.Row="0" Text="{Binding Title}" FontWeight="Bold"/>
+                    <TextBlock Name="AuthorsTbl" Grid.Row="2" Text="{Binding Authors}" FontSize="15"/>
+                    <TextBlock Name="PublishedDateTbl" Grid.Row="4" Text="{Binding FirstPublishDate}" FontSize="15"/>
                     <TextBlock Grid.Row="6" Text="Description" FontSize="18" FontWeight="Bold"/>
-                    <TextBlock Name="DescriptionTbl" Grid.Row="8" Text="ADASDcasdcAScasdsaccccccccccccccccccacsddcas" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBlock Name="DescriptionTbl" Grid.Row="8" Text="{Binding Description}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="10"/>
                     <TextBlock Grid.Row="10" Text="Subjects" FontSize="18" FontWeight="Bold" />
-                    <TextBlock Name="SubjectTbl" Grid.Row="12" Text="ADASDcasdcAScasdsaccccccccccccccccccacsddcas" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBlock Name="SubjectTbl" Grid.Row="12" Text="{Binding Subjects}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="10"/>
                 </Grid>
                 <Grid Grid.Column="2">
                     <Grid.RowDefinitions>
