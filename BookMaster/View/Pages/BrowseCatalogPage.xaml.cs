@@ -48,5 +48,15 @@ namespace BookMaster.View.Pages
         {
 
         }
+
+        private void PreviousCoverBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NextCoverBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

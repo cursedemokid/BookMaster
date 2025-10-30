@@ -139,18 +139,44 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50" />
-                        <RowDefinition Height="30" />
-                        <RowDefinition Height="30" />
-                        <RowDefinition Height="5" />
                         <RowDefinition Height="20" />
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="15" />
                         <RowDefinition Height="10" />
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="5" />
                         <RowDefinition Height="70" />
                         <RowDefinition Height="5" />
-                        <RowDefinition Height="30" />
+                        <RowDefinition Height="20" />
                         <RowDefinition Height="5" />
-                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="70" />
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Text="Boaty MC"/>
+                    <TextBlock Name="TitleTbl" Grid.Row="0" Text="Boaty McBoatface" FontWeight="Bold"/>
+                    <TextBlock Name="AuthorsTbl" Grid.Row="2" Text="by Byron Barton" FontSize="15"/>
+                    <TextBlock Name="PublishedDateTbl" Grid.Row="4" Text="first published: 2016" FontSize="15"/>
+                    <TextBlock Grid.Row="6" Text="Description" FontSize="18" FontWeight="Bold"/>
+                    <TextBlock Name="DescriptionTbl" Grid.Row="8" Text="ADASDcasdcAScasdsaccccccccccccccccccacsddcas" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBlock Grid.Row="10" Text="Subjects" FontSize="18" FontWeight="Bold" />
+                    <TextBlock Name="SubjectTbl" Grid.Row="12" Text="ADASDcasdcAScasdsaccccccccccccccccccacsddcas" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="20" />
+                    </Grid.RowDefinitions>
+                    <Image Name="CoverImg"/>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Name="PreviousCoverBtn" Click="PreviousCoverBtn_Click" Content="&lt;"/>
+                        <Button Name="NextCoverBtn" Grid.Column="2" Click="NextCoverBtn_Click" Content="&gt;"/>
+                    </Grid>
                 </Grid>
             </Grid>
         </Grid>
