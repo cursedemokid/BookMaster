@@ -25,6 +25,7 @@
                     <MenuItem Name="CloseMI" Header="Close" Click="CloseMI_Click"/>
                 </MenuItem>
                 <MenuItem Name="LibraryMenu" Header="Library" >
+                    <MenuItem Name="BrowseCatalogMI" Header="Manage Customers" Click="BrowseCatalogMI_Click"/>
                     <MenuItem Name="ManageCustomersMI" Header="Manage Customers" Click="ManageCustomersMI_Click"/>
                     <MenuItem Name="CirculationMI" Header="Circulation" Click="CirculationMI_Click"/>
                     <MenuItem Name="ReportsMI" Header="Reports" Click="ReportsMI_Click"/>

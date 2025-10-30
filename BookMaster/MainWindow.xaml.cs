@@ -1,4 +1,5 @@
-﻿using BookMaster.View.Windows;
+﻿using BookMaster.View.Pages;
+using BookMaster.View.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace BookMaster
         {
             InitializeComponent();
 
-            if(App.author == null)
+            if(App.currentEmployee == null)
             {
                 LoginMI.Visibility = Visibility.Collapsed;
             }
@@ -40,12 +41,21 @@ namespace BookMaster
         private void LoginMI_Click(object sender, RoutedEventArgs e)
         {
             AuthorizationWindow authorizationWindow = new AuthorizationWindow();
-            authorizationWindow.ShowDialog();
+            if (authorizationWindow.ShowDialog() == true)
+            {
+                LoginMI.Visibility = Visibility.Collapsed;
+                LogoutMI.Visibility = Visibility.Visible;
+                LibraryMenu.Visibility = Visibility.Visible;
+                MainFrame.Navigate(new BrowseCatalogPage());
+            }
         }
 
         private void LogoutMI_Click(object sender, RoutedEventArgs e)
         {
-
+            App.currentEmployee = null;
+            LogoutMI.Visibility = Visibility.Collapsed;
+            LibraryMenu.Visibility = Visibility.Collapsed;
+            MainFrame.Navigate(null);
         }
 
         private void CloseMI_Click(object sender, RoutedEventArgs e)
@@ -64,6 +74,11 @@ namespace BookMaster
         }
 
         private void ReportsMI_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BrowseCatalogMI_Click(object sender, RoutedEventArgs e)
         {
 
         }
