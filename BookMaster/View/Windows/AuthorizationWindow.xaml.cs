@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookMaster.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace BookMaster.View.Windows
     /// </summary>
     public partial class AuthorizationWindow : Window
     {
-        
+        List<Employee> employees = new List<Employee>();
         public AuthorizationWindow()
         {
             InitializeComponent();
@@ -27,7 +28,17 @@ namespace BookMaster.View.Windows
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (LoginTb.Text)
+            if (employees.FirstOrDefault(em => em.Login == LoginTb.Text && em.Password == PasswordPb.Password) != null)
+            {
+                App.currentEmployee = employees.FirstOrDefault(em => em.Login == LoginTb.Text && em.Password == PasswordPb.Password);
+                MessageBox.Show($"Добро пожаловать, {App.currentEmployee}!");
+                DialogResult = true;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show($"Неправильный логин и пароль", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void CancelBtn_Click(object sender, RoutedEventArgs e)
