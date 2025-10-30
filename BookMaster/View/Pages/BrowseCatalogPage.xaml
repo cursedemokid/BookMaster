@@ -156,9 +156,9 @@
                     <TextBlock Name="AuthorsTbl" Grid.Row="2" Text="{Binding Authors}" FontSize="15"/>
                     <TextBlock Name="PublishedDateTbl" Grid.Row="4" Text="{Binding FirstPublishDate}" FontSize="15"/>
                     <TextBlock Grid.Row="6" Text="Description" FontSize="18" FontWeight="Bold"/>
-                    <TextBlock Name="DescriptionTbl" Grid.Row="8" Text="{Binding Description}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="10"/>
+                    <TextBlock Name="DescriptionTbl" Grid.Row="8" Text="{Binding Description}" TextWrapping="Wrap" VerticalAlignment="Top"/>
                     <TextBlock Grid.Row="10" Text="Subjects" FontSize="18" FontWeight="Bold" />
-                    <TextBlock Name="SubjectTbl" Grid.Row="12" Text="{Binding Subjects}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="10"/>
+                    <TextBlock Name="SubjectTbl" Grid.Row="12" Text="{Binding Subjects}" TextWrapping="Wrap" VerticalAlignment="Top"/>
                 </Grid>
                 <Grid Grid.Column="2">
                     <Grid.RowDefinitions>
