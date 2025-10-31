@@ -37,6 +37,13 @@ namespace BookMaster.Model
                 return "by " + string.Join(", ", BookAuthor.Select(bookAuthor => bookAuthor.Author.Fullname));
             }
         }
+        public string AuthorsList
+        {
+            get
+            {
+                return string.Join(", ", BookAuthor.Select(bookAuthor => bookAuthor.Author.Fullname));
+            }
+        }
 
         public string Subjects
         {
@@ -45,6 +52,7 @@ namespace BookMaster.Model
                 return string.Join(", ", BookSubject.Select(bookSubject => bookSubject.Subject.SubjectName));
             }
         }
+
     
         public virtual ICollection<BookAuthor> BookAuthor { get; set; }
         public virtual ICollection<BookSubject> BookSubject { get; set; }

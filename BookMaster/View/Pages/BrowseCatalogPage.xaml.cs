@@ -1,4 +1,5 @@
-﻿using BookMaster.Model;
+﻿using BookMaster.AppData;
+using BookMaster.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,13 +23,17 @@ namespace BookMaster.View.Pages
     public partial class BrowseCatalogPage : Page
     {
         List<BookAuthor> bookAuthors = App.context.BookAuthor.ToList();
-        List<Subject> subjects = App.context.Subject.ToList();
-        List<BookSubject> bookSubjects = App.context.BookSubject.ToList();
+        List<Book> books = App.context.Book.ToList();
+
+        PaginationService<Cover> coverPagination;
+        PaginationService<Book> bookPagination;
         public BrowseCatalogPage()
         {
             InitializeComponent();
 
-            BookAuthorLv.ItemsSource = bookAuthors;
+            bookPagination = new PaginationService<Book>(books, 50);
+            BookAuthorLv.ItemsSource = bookPagination.CurrentPageOfItems;
+            bookPagination.UpdateNavigationButtons(NextPageBtn, Previo)
         }
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
@@ -63,10 +68,20 @@ namespace BookMaster.View.Pages
 
         private void BookAuthorLv_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            BookAuthor selectedBookAuthor = BookAuthorLv.SelectedItem as BookAuthor;
-            Book book = selectedBookAuthor.Book;
+            Book selectedBook = BookAuthorLv.SelectedItem as Book;
+            List<Cover> covers = App.context.Cover.Where(c => c.IdBook == selectedBook.Id).ToList();
+            BookDetailsGrid.DataContext = selectedBook;
 
-            BookDetailsGrid.DataContext = book;
+            coverPagination = new PaginationService<Cover>(covers, 1);
+            CoverLb.ItemsSource = coverPagination.CurrentPageOfItems;
+            coverPagination.UpdateNavigationButtons(PreviousCoverBtn, NextCoverBtn);
         }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+ 
     }
 }

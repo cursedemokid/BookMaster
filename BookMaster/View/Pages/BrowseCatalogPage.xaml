@@ -72,15 +72,8 @@
                 <ListView Name="BookAuthorLv" SelectionChanged="BookAuthorLv_SelectionChanged">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Book.Title}" Width="420"/>
-                            <GridViewColumn Header="Author" Width="420">
-                                <GridViewColumn.DisplayMemberBinding>
-                                    <MultiBinding StringFormat="{}{0} {1}">
-                                        <Binding Path="Author.LastName"/>
-                                        <Binding Path="Author.FirstName"/>
-                                    </MultiBinding>
-                                </GridViewColumn.DisplayMemberBinding>
-                            </GridViewColumn>
+                            <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" Width="420"/>
+                            <GridViewColumn Header="Authors" DisplayMemberBinding="{Binding AuthorsList}" Width="420"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -153,7 +146,9 @@
                         <RowDefinition Height="70" />
                     </Grid.RowDefinitions>
                     <TextBlock Name="TitleTbl" Grid.Row="0" Text="{Binding Title}" FontWeight="Bold"/>
-                    <TextBlock Name="AuthorsTbl" Grid.Row="2" Text="{Binding Authors}" FontSize="15"/>
+                    <TextBlock Name="AuthorsTbl" Grid.Row="2" Text="{Binding Authors}" FontSize="15">
+                        <Hyperlink Click="Hyperlink_Click"/>
+                    </TextBlock>
                     <TextBlock Name="PublishedDateTbl" Grid.Row="4" Text="{Binding FirstPublishDate}" FontSize="15"/>
                     <TextBlock Grid.Row="6" Text="Description" FontSize="18" FontWeight="Bold"/>
                     <TextBlock Name="DescriptionTbl" Grid.Row="8" Text="{Binding Description}" TextWrapping="Wrap" VerticalAlignment="Top"/>
@@ -167,7 +162,15 @@
                         <RowDefinition Height="50" />
                         <RowDefinition Height="20" />
                     </Grid.RowDefinitions>
-                    <Image Name="CoverImg"/>
+                    <ListBox Name="CoverLb">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Image Source="{Binding CoverFile}" HorizontalAlignment="Center"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                     <Grid Grid.Row="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*" />
