@@ -1,4 +1,5 @@
-﻿using BookMaster.Model;
+﻿using ProjectSecurity;
+using BookMaster.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace BookMaster.View.Windows
     /// </summary>
     public partial class AuthorizationWindow : Window
     {
-        List<Employee> employees = App.context.Employee.ToList();
+
         public AuthorizationWindow()
         {
             InitializeComponent();
@@ -28,9 +29,10 @@ namespace BookMaster.View.Windows
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (employees.FirstOrDefault(em => em.Login == LoginTb.Text && em.Password == PasswordPb.Password) != null)
+            var employee = App.context.Employee.FirstOrDefault(em => em.Login == LoginTb.Text);
+            if (employee != null && PasswordSecurity.Verify(PasswordPb.Password, employee.Password))
             {
-                App.currentEmployee = employees.FirstOrDefault(em => em.Login == LoginTb.Text && em.Password == PasswordPb.Password);
+                App.currentEmployee = employee;
                 MessageBox.Show($"Добро пожаловать, {App.currentEmployee.Login}!");
                 DialogResult = true;
                 Close();

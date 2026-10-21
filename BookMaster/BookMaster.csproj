@@ -190,4 +190,5 @@
     <Resource Include="Resources\Icons\warning.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup><Compile Include="Security\PasswordSecurity.cs" /></ItemGroup>
 </Project>
