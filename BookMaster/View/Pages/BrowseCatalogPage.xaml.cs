@@ -33,7 +33,7 @@ namespace BookMaster.View.Pages
 
             bookPagination = new PaginationService<Book>(books, 50);
             BookAuthorLv.ItemsSource = bookPagination.CurrentPageOfItems;
-            bookPagination.UpdateNavigationButtons(NextPageBtn, Previo)
+            bookPagination.UpdateNavigationButtons(NextPageBtn, PreviousPageBtn);
         }
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
